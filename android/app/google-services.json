@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785304744759",
+    "project_id": "my-portfolio-website-1264a",
+    "storage_bucket": "my-portfolio-website-1264a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785304744759:android:b2cae7dff305ff96f160b2",
+        "android_client_info": {
+          "package_name": "com.example.rollo_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2mUYoEnLMxQBtCyTxWcggRiaR896AWU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
