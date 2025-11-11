@@ -37,9 +37,19 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
+          // Update the selected index to highlight the tapped item
           setState(() {
             _selectedIndex = index;
           });
+          // Navigate to the corresponding page based on the index
+          if (index == 1) {
+            // Navigate to About Me page using named route
+            Navigator.pushNamed(context, '/about Me');
+          } else if (index == 2) {
+            // Navigate to Projects page using named route
+            Navigator.pushNamed(context, '/projects');
+          }
+          // For index 0 (Home), do nothing as we are already on the homepage
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
