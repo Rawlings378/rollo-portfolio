@@ -1,14 +1,12 @@
+// lib/main.dart
+
 import 'package:flutter/material.dart';
-import 'package:rollo_portfolio/pages/about_me.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:rollo_portfolio/pages/home_page.dart';
+ import 'package:rollo_portfolio/pages/about_me.dart';
 import 'package:rollo_portfolio/pages/projects_page.dart';
-import 'pages/home_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+void main() {
   runApp(const MyPortfolioApp());
 }
 
@@ -20,13 +18,36 @@ class MyPortfolioApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: '/',
-      routes: {
+      
+      // Your theme code is perfect
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: GoogleFonts.poppinsTextTheme(
+          Theme.of(context).textTheme.apply(bodyColor: Colors.white),
+        ),
+      ),
+      themeMode: ThemeMode.system,
+
+      // This is the only change
+      // We removed the 'routes' and just set 'home' to HomePage
+      routes:{
         '/': (context) => const HomePage(),
-        '/about Me': (context) => const AboutPage(),
-        '/projects': (context) => const ProjectsPage(),
-      },
+        'projects': (context) => const ProjectsPage(),
+        'about me': (context) => const AboutPage(),
+
+
+      }
     );
   }
 }
+     
+  
+    
